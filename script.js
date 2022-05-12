@@ -5,7 +5,7 @@ const popupCloseBtn = document.getElementById("close-popup");
 const mealInfoEl = document.getElementById("meal-info");
 const searchTerm = document.getElementById("search-term");
 const searchBtn = document.getElementById("search");
-
+const body=document.body;
 getRandomMeal();
 fetchFavMeals();
 
@@ -179,6 +179,8 @@ ingredients.push(`${mealData['strIngredient'+i]}-${mealData['strMeasure'+i]}`);
 
   //show popup
   mealPopup.classList.remove("hidden");
+  body.style.overflow="hidden";
+  
 }
 
 searchBtn.addEventListener("click", async () => {
@@ -198,4 +200,5 @@ searchBtn.addEventListener("click", async () => {
 
 popupCloseBtn.addEventListener("click", () => {
   mealPopup.classList.add("hidden");
+  body.style.overflow="visible";
 });
