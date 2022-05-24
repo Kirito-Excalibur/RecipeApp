@@ -66,7 +66,7 @@ function addMeal(mealData, random = false) {
   `;
 
   const btn = meal.querySelector(".meal-body .fav-btn");
-
+  const btnimg=meal.querySelector(".meal-header img");
   btn.addEventListener("click", () => {
     if (btn.classList.contains("active")) {
       removeMealLS(mealData.idMeal);
@@ -80,7 +80,8 @@ function addMeal(mealData, random = false) {
 
     fetchFavMeals();
   });
-  meal.addEventListener("click", () => {
+
+  btnimg.addEventListener("click", () => {
     showMealInfo(mealData);
   });
   mealsEl.appendChild(meal);
