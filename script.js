@@ -136,9 +136,9 @@ function addMealFav(mealData) {
 
   const btn = favMeal.querySelector(".clear");
 
-  btn.addEventListener("click", () => {
+  btn.addEventListener("click", (e) => {
     removeMealLS(mealData.idMeal);
-
+    e.stopPropagation();
     fetchFavMeals();
   });
 
